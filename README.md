@@ -246,7 +246,7 @@ lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so
 
 ### Restore the database using the NMC
 1.  Go to the protection tab
-2.  Select Clients from the left hand side
+2.  Select "clients" from the left hand side
 3.  Right click on the client nwserver01 and click recover
 4.  Go through the wizard, select Oracle when asked what kind.
 5.  When asked if it is an original or duplicate Select Restore to original database.
@@ -257,3 +257,4 @@ lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so
 10. When asked to if you want it shutdown and mount the database select yes.
 11. Use default datafile location
 12. Edit RMAN script to Allocate and release only one channel(This is only for our situation because of our free database version restrictions. Normally default is going to be okay)
+13. Run recovery
