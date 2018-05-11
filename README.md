@@ -161,7 +161,7 @@ OR
     `ls -ltr`
     should see: lrwxrwxrwx.   1 root root    10 May  3 13:17 nsr -> /disk2/nsr
 #### EX of why we do symbolic links
-We could use a symbolic link to a mounted disk to aviod overloading our root directory during a -D9 log gathering or other high space using functions
+We could use a symbolic link to a mounted disk to aviod overloading our root directory during a -D9 log gathering or other high space using functions.
 
 ### Setup Networking for client
 To avoid issues with localhost references we need to name our host and define a path to it.
@@ -206,11 +206,11 @@ To avoid issues with localhost references we need to name our host and define a 
 4. Confirm nw and gst services are up: 
 `/etc/init.d/networker status`
 `/etc/init.d/gst status`
-5. Navigate to localhost:9000 in a web browser 
+5. Navigate to localhost:9000 in a web browser .
 6. Download the gconsole.jnlp by clicking the higlighted here link in "click here to start NetWorker Management Console."
-6. Open a new terminal  (NOT AS ROOT) an navigate to downloads `cd ~/Downloads` run the java nmc program by typing `javaws gconsole.jnlp`
-7. Fill out user as `Administrator` and password as the password you defined while filling out the /opt/lgtonmc/bin/nmc_config
-8. Fillout the wizard as prompted
+6. Open a new terminal  (NOT AS ROOT) an navigate to downloads `cd ~/Downloads` run the java nmc program by typing `javaws gconsole.jnlp`.
+7. Fill out user as `Administrator` and password as the password you defined while filling out the /opt/lgtonmc/bin/nmc_config.
+8. Fillout the wizard as prompted.
 
 ### INSTALL NMDA
 1. Confirm that Services(deamons) are running :`/etc/init.d/networker status`
@@ -220,20 +220,20 @@ To avoid issues with localhost references we need to name our host and define a 
 
 ### LINK LIBRARY
 
-1. cd $ORACLE_HOME/lib
-2. ln -s /usr/lib/libnsrora.so libobk.so
+1. cd $ORACLE_HOME/lib.
+2. ln -s /usr/lib/libnsrora.so libobk.so.
 3. confirm that the link exsists by typing `ls -ltr|grep libobk` output should see something like:
-lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so
+lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so.
 
 ### ADD ORACLE CLIENT
 1.  Open NMC
-2.  Add a new client through the wizard
-3.  When asked for the TNS directory enter: /u01/app/oracle/product/11.2.0/xe/network/admin
-4.  Select OS user and enter in username: oracle, and select XE as the database SID
+2.  Add a new client through the wizard.
+3.  When asked for the TNS directory enter: /u01/app/oracle/product/11.2.0/xe/network/admin.
+4.  Select OS user and enter in username: oracle, and select XE as the database SID.
 5.  Proceed through the rest of the wizard as needed.
 6.  Create a new AFD device called oracle backup.
-7.  Add that AFD device to the default pool
-8.  Add your new client to a group
+7.  Add that AFD device to the default pool.
+8.  Add your new client to a group.
 9.  Create a new workflow and that coraspodes to the group and add it to a policy.
 10. Run the policy backup.
 
@@ -245,16 +245,18 @@ lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so
 5. Verify that the table no longer exsists: `DESC contact`
 
 ### Restore the database using the NMC
-1.  Go to the protection tab
-2.  Select "clients" from the left hand side
-3.  Right click on the client nwserver01 and click recover
+1.  Go to the protection tab.
+2.  Select "clients" from the left hand side.
+3.  Right click on the client nwserver01 and click recover.
 4.  Go through the wizard, select Oracle when asked what kind.
 5.  When asked if it is an original or duplicate Select Restore to original database.
-6.  When asked for the TNS directory enter: /u01/app/oracle/product/11.2.0/xe/network/admin
-7.  Select OS user and enter in username: oracle, and select XE as the database SID
+6.  When asked for the TNS directory enter: /u01/app/oracle/product/11.2.0/xe/network/admin.
+7.  Select OS user and enter in username: oracle, and select XE as the database SID.
 8.  Select Restore and recover the entire database or specific database objects.
 9.  Select the whole database.
-10. When asked to if you want it shutdown and mount the database select yes.
-11. Use default datafile location
-12. Edit RMAN script to Allocate and release only one channel(This is only for our situation because of our free database version restrictions. Normally default is going to be okay)
-13. Run recovery
+10. Select a point and time recovery to a time before you deleted the database.
+11. When asked to if you want it shutdown and mount the database select yes.
+12. Use default datafile location.
+13. Edit RMAN script to Allocate and release only one channel. It defaults to 4 so take  out the last 3 allocation and release commands(This is only for our situation because of our free database version restrictions. Normally default is going to be okay).
+14. Add recovery name.
+15. Run recovery.
