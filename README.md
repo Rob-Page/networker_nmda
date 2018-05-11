@@ -238,9 +238,9 @@ lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so
 10. Run the policy backup.
 
 ### Restore test case.
-1. type `sqlplus sys as sysdba` into a commandline
+1. type `sqlplus sys AS sysdba` into a commandline
 2. Verify that the table exsists: `DESC contact`
 3. Delete data in the table: `DELETE contact;`
 4. Drop the table in the database: `DROP TABLE contact;`
-5. Verify that the table no longer exsists `DESC contact`
+5. Verify that the table no longer exsists: `DESC contact`
 5. Restore the database using the NMC
