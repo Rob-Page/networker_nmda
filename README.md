@@ -243,4 +243,17 @@ lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so
 3. Delete data in the table: `DELETE contact;`
 4. Drop the table in the database: `DROP TABLE contact;`
 5. Verify that the table no longer exsists: `DESC contact`
-5. Restore the database using the NMC
+
+### Restore the database using the NMC
+1.  Go to the protection tab
+2.  Select Clients from the left hand side
+3.  Right click on the client nwserver01 and click recover
+4.  Go through the wizard, select Oracle when asked what kind.
+5.  When asked if it is an original or duplicate Select Restore to original database.
+6.  When asked for the TNS directory enter: /u01/app/oracle/product/11.2.0/xe/network/admin
+7.  Select OS user and enter in username: oracle, and select XE as the database SID
+8.  Select Restore and recover the entire database or specific database objects.
+9.  Select the whole database.
+10. When asked to if you want it shutdown and mount the database select yes.
+11. Use default datafile location
+12. Edit RMAN script to Allocate and release only one channel(This is only for our situation because of our free database version restrictions. Normally default is going to be okay)
