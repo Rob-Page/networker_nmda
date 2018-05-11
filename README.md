@@ -65,12 +65,12 @@ export PATH=$PATH:$JRE_HOME/bin
 export JAVA_HOME=/usr/java/jdk1.8.0_171-amd64
 export JAVA_PATH=$JAVA_HOME
 export PATH=$PATH:$JAVA_HOME/bin
-4.  type `:wq` and hit the enter key
+4.  hit the esc key, type `:wq` and hit the enter key
 5.  type `source ~/.bashrc`
 6.  type `vi /etc/.bashrc`
 7.  type `i` to insert
 8.  add the line `source ~/.bashrc`
-9.  type `:wq` to save
+9.  hit the esc key, type `:wq` and hit the enter key
 10. Check oracle home path: `echo $ORACLE_HOME` this should print out the oracle home path. Somthing like /u01/app/product/11.2/XE/
 
 ## Install SQL Developer
@@ -239,7 +239,8 @@ lrwxrwxrwx.  1 rob rob    21 May 10 14:29 libobk.so -> /usr/lib/libnsrora.so
 
 ### Restore test case.
 1. type `sqlplus sys as sysdba` into a commandline
-2. DESC contact
-3. DELETE contact;
-4. DROP TABLE contact;
-5. Restore the database
+2. Verify that the table exsists: `DESC contact`
+3. Delete data in the table: `DELETE contact;`
+4. Drop the table in the database: `DROP TABLE contact;`
+5. Verify that the table no longer exsists `DESC contact`
+5. Restore the database using the NMC
