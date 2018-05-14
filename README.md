@@ -48,7 +48,7 @@ http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.
 2. Run configuration file that it tells you to run at the end of the install
 3. Check to see if you can login to the Oracle server `sqlplus sys AS sysdba`
 
-## Setup .bashrc with all the system varibles we setup
+## Setup .bashrc with all the system varibles we need
 1. type `cd ~`
 1. type `vi .bashrc`
 2. type `i`
