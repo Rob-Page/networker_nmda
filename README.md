@@ -120,7 +120,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 5. You should a table with results pop up bellow.
 
 ## Prepare our database for backup
-1. Log into sqlplus on the xe database: `sqlplus sys@xe`
+1. Log into sqlplus on the xe database: `sqlplus sys as sysdba`
 2. shutdown the database: `shutdown` 
 3. startup and mount the database: `startup mount`
 4. Modify the databse mode to archivelog: `alter database archivelog;`
