@@ -181,7 +181,7 @@ To avoid issues with localhost references we need to name our host and define a 
 2. reboot machine to apply changes `reboot`
 
 ### Download Networker
-1. download Networker 9.2 from : ftp://ftp•••••••••.legato.com/pub/NetWorker/ 
+1. download Networker 9.2 from : ftp://ftp.legato.com/pub/NetWorker/ 
 2. untar and unzip the folder: `tar -xzf file_name.tar.gz`
 ### CHOOSE ONE INSTALATION
 #### For a a CLIENT
