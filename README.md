@@ -130,7 +130,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 ## Create a Backup to local disk using RMAN
 1. Create a new directory to hold our backups: `sudo mkdir -p /backup/rman`
 2. Set permissions on the directory(DO NOT DO THIS IN A SENSITIVE ENVIRONMENT DEFINE PERMISSIONS FOR YOUR USERS AS NEEED INSTEAD OF A BLANKET ALL READ WRITE): `chmod 777 /backup/rman`
-3. login to RMAN with the sys user on the xe database: `rman TARGET SYS@xe`
+3. login to RMAN with the sys user on the xe database: `rman TARGET SYS`
 4. Show the xe databse rman configuration: `SHOW ALL;`
 5. Configure a default channel for this databse: `CONFIGURE CHANNEL DEVICE TYPE DISK FORMAT '/backup/rman/%d_full_%u_%s_%p';`
     1. This channel defined as a disk location will output all our backups to /backup/rman in the format  we defined "%d_full_%u_%s_%p" 
